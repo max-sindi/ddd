@@ -151,11 +151,7 @@ module.exports = {
               cacheDirectory: true,
             },
           },
-          // "postcss" loader applies autoprefixer to our CSS.
-          // "css" loader resolves paths in CSS and adds assets as dependencies.
-          // "style" loader turns CSS into JS modules that inject <style> tags.
-          // In production, we use a plugin to extract that CSS to a file, but
-          // in development "style" loader enables hot editing of CSS.
+            // TODO: duplicate this sass config to webpack.config.prod
           {
             test: /\.s[ac]ss$/i,
             use: [
@@ -165,8 +161,20 @@ module.exports = {
               'css-loader',
               // Compiles Sass to CSS
               'sass-loader',
+                {
+                    loader: 'sass-resources-loader',
+                    options: {
+                        // Provide path to the file with resources
+                        resources: ['src/styles/_variables.scss', 'src/styles/_mixins.scss'],
+                    }
+                }
             ],
           },
+          // "postcss" loader applies autoprefixer to our CSS.
+          // "css" loader resolves paths in CSS and adds assets as dependencies.
+          // "style" loader turns CSS into JS modules that inject <style> tags.
+          // In production, we use a plugin to extract that CSS to a file, but
+          // in development "style" loader enables hot editing of CSS.
           {
             test: /\.css$/,
             use: [

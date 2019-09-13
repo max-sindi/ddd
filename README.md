@@ -1,5 +1,29 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## CUSTOM INFO
+
+# STYLES
+For now project's styles are implemented as scss.
+They are divided in 2 parts: 
+  - general styles in src/styles folder 
+  - partials for components which are located in components' folders.   
+  
+Also webpack has configuration to inject `src/styles/_[mixins variablers].scss` as global styles environment 
+so u have no need to import those partials into every file in order to use it. 
+It's implemented by `sass-resources-loader` node package
+
+
+
+
+
+
+
+
+
+
+
+
+## CREATE-REACT-APP README
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
