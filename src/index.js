@@ -6,6 +6,10 @@ import { Provider } from 'react-redux'
 import store from './store/'
 import registerServiceWorker from './registerServiceWorker'
 
+import 'normalize.css/normalize.css'
+// root styles
+import './styles/index.scss'
+
 const render = Component => {
   ReactDOM.render(
     <AppContainer>
