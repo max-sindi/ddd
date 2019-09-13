@@ -1,8 +1,11 @@
+
 $sizes: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
-
-
-// create helpers in a way .p-20 { padding: 20px} or .ml-45 { margin-left: 45px } and so on..
-
+/*
+  create helpers in a way:
+    .p-20 { padding: 20px} or
+    .ml-45 { margin-left: 45px }
+    and so on..
+*/
 // paddings
 @each $size in $sizes {
   .p-#{$size} {
@@ -41,3 +44,44 @@ $sizes: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 9
   }
 }
 
+
+// display utils
+.flex,
+.d-flex {
+  display: flex;
+}
+
+/*
+  flex utils:
+    .align-center { align-items: center } or
+    .justify-center { justify-content: center }
+    and so on..
+*/
+
+// justify-content
+$justify-variants: center, flex-start, flex-end, space-between, space-aroud;
+@each $justify-variant in $justify-variants {
+  .justify-#{$justify-variant} {
+    justify-content: $justify-variant;
+  }
+}
+
+// align-items
+$align-variants: stretch, center, flex-start, flex-end;
+@each $align-variant in $align-variants {
+  .align-#{$align-variant} {
+    align-items: $align-variant;
+  }
+}
+
+// flex-directions
+$directions-variants: row, row-reverse, column, column-reverse;
+@each $direction-variant in $directions-variants {
+  .flex-#{$direction-variant} {
+    flex-direction: #{$direction-variant};
+  }
+}
+
+.grow-1 {
+  flex-grow: 1;
+}

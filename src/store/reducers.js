@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
+import auth from './modules/auth/reducer'
 
 export default combineReducers({
-  // just a stub, white your reducers in ./modules
-  initial: (state = {}) => state
+  auth
 })
