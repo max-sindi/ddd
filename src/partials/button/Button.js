@@ -15,7 +15,7 @@ Button.propTypes = {
   size: PropTypes.oneOf(['sm', 'lg']),
   text: PropTypes.string,
   attrs: PropTypes.object,
-  outlined: PropTypes.boolean,
+  outlined: PropTypes.bool,
 }
 
 Button.defaultProps = {
