@@ -1,5 +1,7 @@
 const withSass = require('@zeit/next-sass')
-const path = require('path');
+const path = require('path')
+const Dotenv = require('dotenv-webpack')
+require('dotenv').config()
 
 const aliases = {
   '@styles': path.resolve(__dirname, 'styles'),
@@ -39,6 +41,16 @@ module.exports = withSass({
       ...config.resolve.alias,
       ...aliases,
     }
+
+    config.plugins = [
+      ...config.plugins,
+
+      // Read the .env file
+      new Dotenv({
+        path: path.join(__dirname, '.env'),
+        systemvars: true
+      })
+    ]
 
     return config
   },
