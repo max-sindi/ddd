@@ -1,0 +1,63 @@
+.button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 24px;
+  font-family: $ff-primary;
+
+  &:focus {
+    outline: 0;
+  }
+
+
+  &--aqua,
+  &--aqua {
+    @extend .button;
+    background: $aqua-light;
+    color: $white;
+
+    &:not(.outlined) {
+      &:focus {
+        background-color: $aqua;
+      }
+      &:active {
+        background: $aqua-dark;
+      }
+    }
+
+
+    &.outlined {
+      @extend .button;
+      color: $aqua-light;
+      border: 1px solid $aqua-light;
+
+      &:focus {
+        color: $aqua;
+        border-color: $aqua;
+      }
+    }
+  }
+
+  &--lg {
+    font-size: 17px;
+
+    &.outlined {
+      padding: 14px 27px;
+    }
+    &:not(.outlined) {
+      padding: 15px 28px;
+    }
+  }
+
+  &--sm {
+    font-size: 15px;
+
+    &.outlined {
+      padding: 9px 19px;
+    }
+    &:not(.outlined) {
+      padding: 10px 20px;
+    }
+  }
+}
+
